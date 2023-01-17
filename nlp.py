@@ -32,10 +32,14 @@ print(len(brown.words(categories='government')))
 #4-List the most frequent tokens 
 temp = defaultdict(int)
 for sub in text1:
-	for wrd in sub.split():
-		temp[wrd] += 1
+    for word in sub.split():
+        temp[word] +=1
 res = max(temp, key=temp.get)
-print("Word with maximum frequency : " + str(res))
+print(str(res))
+
+count = FreqDist(text1)
+count.most_common()
+
 #5-Count the number of sentences 
 print("Count the number of sentences") 
 number_of_sentences = sent_tokenize(text1)
